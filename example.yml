@@ -1,0 +1,36 @@
+template: Hello, %s!
+defaultName: amail
+
+database:
+  driverClass: org.postgresql.Driver
+  #driverClass: com.mysql.jdbc.Driver
+  # the username
+  #user: amail
+  user: zett
+
+  # the password
+  #password: pingu123
+  password: zett
+
+  # the JDBC URL
+  #url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8
+  #url: jdbc:mysql://localhost/amail?useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true
+  url: jdbc:postgresql://localhost:5432/zett
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+
+  # the minimum number of connections to keep open
+  minSize: 8
+
+  # the maximum number of connections to keep open
+  maxSize: 32
+
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false
